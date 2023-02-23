@@ -276,11 +276,11 @@ body {
   letter-spacing: -0.5px;
   /* Color mode */
   background-color: #fff;
-  color: #171718;
+  color: #0c0a0a;
 }
 
 .dark {
-  background-color: #171718;
+  background-color: #0c0a0a;
   color: #fff;
 }
 
@@ -297,6 +297,13 @@ body {
   padding: 0 15px;
   width: 100%;
   max-width: 1200px;
+}
+
+.projects__big-container {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 1750px;
 }
 
 .title {
@@ -329,7 +336,7 @@ body {
   padding: 20px 0px;
   border-bottom: 1px solid #26292d;
   letter-spacing: normal;
-  background-color: #171718;
+  background-color: #0c0a0a;
   color: #fff;
 }
 
@@ -455,8 +462,10 @@ body {
 /* Header */
 
 .header {
-  padding: 40px 0;
-  min-height: 695px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -467,13 +476,36 @@ body {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  color: #fff;
-  background: url("../img/header-bg.png") center center/auto no-repeat, #171718;
+}
+
+.header__video-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.header__effects {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .header__wrapper {
   padding: 0 15px;
-  max-width: 660px;
+  max-width: 950px;
+  color: #fff;
+  z-index: 3;
 }
 
 .header__title {
@@ -488,8 +520,11 @@ body {
   font-weight: 700;
 }
 
+.header__title strong::first-letter {
+  text-transform: uppercase;
+}
+
 .header__title em {
-  margin-bottom: 40px;
   font-style: normal;
   color: #5c62ec;
 }
@@ -541,22 +576,15 @@ body {
 }
 
 .projects__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 30px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 40px;
 }
 
 .projects__item {
-  max-width: 370px;
+  margin: 0 auto;
+  max-width: 350px;
   -webkit-box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -564,17 +592,31 @@ body {
 }
 
 .projects__img {
-  width: 370px;
-  height: 278px;
-  border-radius: 10px;
+  width: 350px;
+  height: 330px;
+  border-radius: 10px 10px 0px 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .projects__item-title {
-  padding: 15px 20px 25px 20px;
+  padding: 15px 20px 10px 20px;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.3;
-  color: #171718;
+  color: #0c0a0a;
+}
+
+.projects__item-text {
+  padding: 0px 20px 25px 20px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #0c0a0a;
+}
+
+.projects__item-text strong {
+  color: rgb(15, 104, 15);
 }
 
 .projects__details {
@@ -595,9 +637,11 @@ body {
 
 .projects__cover {
   margin-bottom: 40px;
-  width: 100%;
+  width: 100% !important;
   max-width: 850px;
   height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -609,7 +653,7 @@ body {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.3;
-  color: #171718;
+  color: #0c0a0a;
 }
 
 .projects__details-text:not(:last-child) {
@@ -683,7 +727,7 @@ body {
   margin-top: auto;
   padding: 60px 0 50px 0;
   color: #fff;
-  background-color: #171718;
+  background-color: #0c0a0a;
 }
 
 .footer__wrapper {
@@ -741,10 +785,6 @@ body {
             order: 0;
   }
 
-  .header {
-    min-height: unset;
-  }
-
   .header__title {
     font-size: 30px;
   }
@@ -794,8 +834,27 @@ body {
 }
 
 @media (max-width: 576px) {
+  .header {
+    height: 90vh;
+  }
+
+  .header__wrapper {
+    margin-bottom: 70px;
+  }
+
+  .header__title {
+    font-size: 26px;
+  }
+
+  .projects__list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
   .projects__img {
-    width: 320px;
-    height: 240px;
+    width: 100%;
+    max-width: 350px;
+    min-width: 300px;
   }
 }
