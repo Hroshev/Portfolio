@@ -1,2 +1,2 @@
-import * as darkMode from "./modules/dark-mode.js"
-import * as date from "./modules/date.js"
+import darkMode from "./modules/dark-mode.js"
+import date from "./modules/date.js"

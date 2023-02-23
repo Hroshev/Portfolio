@@ -1,25 +1,21 @@
+
 import Swiper from "swiper/bundle";
 
-const categoriesSection = new Swiper(".header__categories__swiper", {
+const swiper = new Swiper(".slider", {
   slidesPerView: 1,
-  slidesPerView: "auto",
-  spaceBetween: 10,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
+  spaceBetween: 20,
+// autoplay: {
+//   delay: 2500,
+//   disableOnInteraction: false,
+// },
+breakpoints: {
+  830: {
+    slidesPerView: 2,
+    spaceBetween: 30,
   },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+  1770: {
+    slidesPerView: 3,
+    spaceBetween: 48,
   },
-  breakpoints: {
-    576: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    992: {
-      slidesPerView: 4,
-      spaceBetween: 30,
-    },
-  },
+},
 });

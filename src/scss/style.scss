@@ -102,20 +102,44 @@
 
 /* Header */
 .header {
-    padding: 40px 0;
-    min-height: 695px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: $header-text;
-    background: url("@img/header-bg.png") center center/auto no-repeat, $dark-bg;
-    @include tablet-min {
-        min-height: unset;
+    @include phone {
+        height: 90vh;
+    }
+    &__video-bg {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        object-fit: cover;
+    }
+    &__effects {
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.7);
     }
     &__wrapper {
         padding: 0 15px;
-        max-width: 660px;
+        max-width: 950px;
+        color: $header-text;
+        z-index: 3;
+        @include phone {
+            margin-bottom: 70px;
+        }
     }
     &__title {
         margin-bottom: 20px;
@@ -125,15 +149,20 @@
         @include tablet-min {
             font-size: 30px;
         }
+        @include phone {
+            font-size: 26px;
+        }
         strong {
             font-size: 60px;
             font-weight: 700;
+            &::first-letter {
+                text-transform: uppercase;
+            }
             @include tablet-min {
                 font-size: 40px;
             }
         }
         em {
-            margin-bottom: 40px;
             font-style: normal;
             color: $accent;
         }
@@ -183,35 +212,50 @@
         }
     }
     &__list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 30px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 40px;
+        @include phone {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
     }
     &__item {
-        max-width: 370px;
+        margin: 0 auto;
+        max-width: 350px;
         box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
         background-color: $white;
     }
     &__img {
-        width: 370px;
-        height: 278px;
-        border-radius: 10px;
+        width: 350px;
+        height: 330px;
+        border-radius: 10px 10px 0px 0px;
+        object-fit: cover;
         @include phone {
-            width: 320px;
-            height: 240px;
+            width: 100%;
+            max-width: 350px;
+            min-width: 300px;
         }
     }
     &__item-title {
-        padding: 15px 20px 25px 20px;
+        padding: 15px 20px 10px 20px;
         font-size: 24px;
         font-weight: 700;
         line-height: 1.3;
         color: $text-color;
         @include tablet-min {
             font-size: 22px;
+        }
+    }
+    &__item-text {
+        padding: 0px 20px 25px 20px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.3;
+        color: $black;
+        strong {
+            color: rgb(15, 104, 15);
         }
     }
     /* Projects details */
@@ -225,9 +269,10 @@
     }
     &__cover {
         margin-bottom: 40px;
-        width: 100%;
+        width: 100% !important;
         max-width: 850px;
         height: auto;
+        object-fit: cover;
         box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
     }

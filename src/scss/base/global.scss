@@ -1,6 +1,6 @@
 // Color
 $extraBlack: #000;
-$black: #171718;
+$black: #0c0a0a;
 $black-border: #26292d;
 $white: #fff;
 $purple: #5c62ec;
@@ -40,6 +40,13 @@ body {
   padding: 0 15px;
   width: 100%;
   max-width: 1200px;
+}
+
+.projects__big-container {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 1750px;
 }
 
 .title {
