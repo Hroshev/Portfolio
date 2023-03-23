@@ -1,0 +1,41 @@
+body {
+  font-family: 'Bitter', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  line-height: 1.2;
+  background-color: $light-bg;
+}
+
+.dark {
+  background-color: $dark-bg;
+  .nav__link {
+    color: $light-text;
+  }
+  .header__content {
+    color: $light-text;
+  }
+  .header__btn {
+    background-color: #fff;
+  }
+  .about {
+    color: $light-text;
+  }
+  .footer__wrapper {
+    border-top: 1px solid #fff;
+  }
+  .footer__copyright {
+    color: $light-text;
+  }
+  .footer__icon {
+    fill: #fff;
+  }
+}
+
+[class*="__container"] {
+  margin: 0 auto;
+  padding: 0 $containerPadding + px;
+  width: 100%;
+  max-width: ($containerWidth + ($containerPadding * 2)) + px;
+}

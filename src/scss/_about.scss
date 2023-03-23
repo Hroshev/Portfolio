@@ -1,0 +1,51 @@
+.about {
+    padding: 70px 0;
+    color: $dark-text;
+    @include tablet-min {
+        padding: 40px 0;
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+        @include tablet-min {
+            flex-direction: column-reverse;
+        }
+    }
+    &__skills {
+        margin-top: 90px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        @include tablet-min {
+            margin-top: 0;
+        }
+    }
+    &__skills-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    &__skills-title {
+        font-size: 30px;
+        font-weight: 700;
+        writing-mode: vertical-lr;
+    }
+    &__item {
+        font-size: 18px;
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+    &__title {
+        font-size: 48px;
+        text-align: center;
+        @include phone {
+            font-size: 32px;
+        }
+    }
+    &__subtitle {
+        margin-top: 30px;
+        font-size: 24px;
+    }
+}

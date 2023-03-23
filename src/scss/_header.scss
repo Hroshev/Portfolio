@@ -1,0 +1,48 @@
+/* Header */
+.header {
+    padding: 160px 0 20px 0;
+    @include phone {
+        padding: 60px 0 20px 0;
+    }
+    &__content {
+        max-width: 900px;
+        color: $dark-text;
+    }
+    &__title {
+        margin-bottom: 20px;
+        font-size: 70px;
+        font-weight: 400;
+        @include tablet-min {
+            font-size: 48px;
+        }
+        @include phone {
+            font-size: 32px;
+        }
+        strong {
+            font-weight: 700;
+        }
+    }
+    &__text {
+        font-size: 24px;
+        font-weight: 400;
+    }
+    &__btn {
+        display: inline-block;
+        margin-top: 80px;
+        padding: 10px 30px;
+        font-size: 24px;
+        font-weight: 400;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid #000;
+        color: $dark-text;
+        transition: opacity .2s ease-in;
+        &:hover {
+            opacity: 0.7;
+        }
+        &:active {
+            position: relative;
+            top: 1px;
+        }
+    }
+}

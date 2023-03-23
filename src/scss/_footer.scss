@@ -1,0 +1,33 @@
+.footer {
+    margin-top: auto;
+    &__wrapper {
+        padding: 25px 0;
+        border-top: 1px solid #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        @include phone {
+            flex-direction: column-reverse;
+        }
+    }
+    &__copyright {
+        font-size: 18px;
+        color: $dark-text;
+    }
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    &__icon {
+        width: 30px;
+        height: 30px;
+        fill: #000;
+        @include tablet-min {
+            width: 26px;
+            height: 26px;
+        }
+    }
+}
