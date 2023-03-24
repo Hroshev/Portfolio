@@ -8,6 +8,7 @@ body {
   background-color: $light-bg;
 }
 
+/* Dark Theme */
 .dark {
   background-color: $dark-bg;
   .nav__link {
@@ -19,7 +20,13 @@ body {
   .header__btn {
     background-color: #fff;
   }
+  .projects {
+    color: $light-text;
+  }
   .about {
+    color: $light-text;
+  }
+  .title {
     color: $light-text;
   }
   .footer__wrapper {
@@ -38,4 +45,14 @@ body {
   padding: 0 $containerPadding + px;
   width: 100%;
   max-width: ($containerWidth + ($containerPadding * 2)) + px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  color: $dark-text;
+  @include phone {
+      font-size: 32px;
+  }
 }
