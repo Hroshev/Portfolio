@@ -1,12 +1,19 @@
 /* Header */
 .header {
-    padding-top: 100px;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+        @include desktop-min {
+            flex-direction: column;
+        }
+    }
     &__content {
-        max-width: 900px;
         color: $dark-text;
     }
     &__title {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         font-size: 60px;
         font-weight: 400;
         @include tablet-min {
@@ -20,8 +27,16 @@
         }
     }
     &__text {
-        margin-bottom: 60px;
+        margin-bottom: 20px;
         font-size: 24px;
         font-weight: 400;
+        @include phone {
+            font-size: 18px;
+        }
+    }
+    &__image {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
     }
 }
