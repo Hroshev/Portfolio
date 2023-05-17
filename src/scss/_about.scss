@@ -36,5 +36,8 @@
     &__subtitle {
         margin-top: 30px;
         font-size: 24px;
+        @include phone {
+            font-size: 20px;
+        }
     }
 }

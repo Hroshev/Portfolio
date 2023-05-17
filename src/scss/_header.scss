@@ -5,22 +5,23 @@
         justify-content: space-between;
         align-items: center;
         gap: 25px;
-        @include desktop-min {
-            flex-direction: column;
+        @include tablet {
+            flex-direction: column-reverse;
         }
     }
     &__content {
+        max-width: 500px;
         color: $dark-text;
+        @include tablet {
+            text-align: center;
+        }
     }
     &__title {
         margin-bottom: 10px;
         font-size: 60px;
         font-weight: 400;
-        @include tablet-min {
-            font-size: 40px;
-        }
         @include phone {
-            font-size: 28px;
+            font-size: 22px;
         }
         strong {
             font-weight: 700;
@@ -35,8 +36,31 @@
         }
     }
     &__image {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
+        width: 34rem;
+        height: 34rem;
+        background-image: url('@img/hroshev.webp');
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 3px solid #ffffff;
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        transition: all 1s ease-in-out;
+        animation: morph 8s ease-in-out infinite;
+        @include phone {
+            width: 20rem;
+            height: 20rem;
+        }
     }
 }
+  
+  @keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+  }

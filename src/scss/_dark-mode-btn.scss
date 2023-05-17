@@ -14,13 +14,13 @@
     &::before {
         position: absolute;
         content: "";
-        top: 1px;
-        left: 1px;
+        top: 0;
+        left: 0;
         display: block;
-        width: 24px;
-        height: 24px;
+        width: 25px;
+        height: 25px;
         border-radius: 50%;
-        background-color: rgb(80 94 171 / 59%);
+        background-color: rgb(78 88 149 / 60%);
         transition: left 0.3s ease-in;
     }
     &--active {
