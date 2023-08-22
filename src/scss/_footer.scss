@@ -1,11 +1,11 @@
 .footer {
     &__wrapper {
-        padding: 25px 0;
-        border-top: 1px solid #000;
+        padding: 20px 0;
+        border-top: 1px solid #000000;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 16px;
+        gap: 20px;
         @include phone {
             flex-direction: column-reverse;
         }
@@ -23,6 +23,6 @@
     &__icon {
         width: 28px;
         height: 28px;
-        fill: #000;
+        fill: #000000;
     }
 }
